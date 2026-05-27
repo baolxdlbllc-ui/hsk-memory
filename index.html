@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HSK Memory — Học tiếng Trung HSK4–HSK5 cho người Việt</title>
+  <meta name="description" content="Học từ vựng, ngữ pháp, nghe phát âm, luyện quiz và ôn tập thông minh HSK4–HSK5." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================= HEADER ========================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo" data-scroll-to="home">
+        <span class="logo-mark">汉</span>
+        <span class="logo-text">HSK Memory</span>
+      </a>
+
+      <nav id="main-nav" class="main-nav" aria-label="Main">
+        <a href="#home" data-scroll-to="home">Trang chủ</a>
+        <a href="#dashboard" data-scroll-to="dashboard">Dashboard</a>
+        <a href="#vocabulary" data-scroll-to="vocabulary" data-filter-level="HSK4">HSK4</a>
+        <a href="#vocabulary" data-scroll-to="vocabulary" data-filter-level="HSK5">HSK5</a>
+        <a href="#vocabulary" data-scroll-to="vocabulary">Từ vựng</a>
+        <a href="#grammar" data-scroll-to="grammar">Ngữ pháp</a>
+        <a href="#quiz" data-scroll-to="quiz">Luyện nghe</a>
+        <a href="#vocabulary" data-scroll-to="vocabulary">Luyện đọc</a>
+        <a href="#review" data-scroll-to="review">Ôn tập</a>
+        <a href="#confusing" data-scroll-to="confusing">Từ dễ nhầm</a>
+        <a href="#flashcard" data-scroll-to="flashcard" class="btn btn-primary btn-sm nav-cta">Bắt đầu học</a>
+      </nav>
+
+      <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========================= HERO ========================= -->
+    <section id="home" class="hero">
+      <div class="container">
+        <p class="eyebrow">Học tiếng Trung · HSK4 – HSK5</p>
+        <h1 class="hero-title">Học HSK4–HSK5 dễ hiểu, dễ nhớ và <span class="accent">dùng được trong câu</span></h1>
+        <p class="hero-lead">Học từ vựng, ngữ pháp, nghe, đọc và luyện đề HSK theo phương pháp ngữ cảnh, ví dụ thực tế và ôn tập thông minh.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#vocabulary" data-scroll-to="vocabulary" data-filter-level="HSK4">Bắt đầu học HSK4</a>
+          <a class="btn btn-accent btn-lg" href="#vocabulary" data-scroll-to="vocabulary" data-filter-level="HSK5">Bắt đầu học HSK5</a>
+          <a class="btn btn-outline btn-lg" href="#flashcard" data-scroll-to="flashcard" data-action="quick-review">Ôn từ sắp quên</a>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit"><div class="benefit-icon">🏷️</div><h3>Học theo chủ đề</h3><p>Từ vựng được nhóm theo 11 chủ đề thực tế.</p></article>
+          <article class="benefit"><div class="benefit-icon">💬</div><h3>Ví dụ dễ hiểu</h3><p>Mỗi từ có câu ví dụ + dịch tiếng Việt.</p></article>
+          <article class="benefit"><div class="benefit-icon">🔊</div><h3>Nghe phát âm mẫu</h3><p>Phát âm chuẩn Mandarin, có nghe chậm.</p></article>
+          <article class="benefit"><div class="benefit-icon">🔁</div><h3>Phân biệt từ dễ nhầm</h3><p>15 nhóm từ hay nhầm, có quy tắc nhớ nhanh.</p></article>
+          <article class="benefit"><div class="benefit-icon">🧠</div><h3>Ôn tập thông minh</h3><p>Spaced repetition đơn giản giúp nhớ lâu.</p></article>
+          <article class="benefit"><div class="benefit-icon">📝</div><h3>Luyện dạng đề HSK</h3><p>5 dạng quiz, có giải thích sau mỗi câu.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= DASHBOARD ========================= -->
+    <section id="dashboard" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Dashboard học tập</h2>
+          <p>Tổng quan tiến độ của bạn. Dữ liệu được lưu trên trình duyệt này.</p>
+        </div>
+        <div id="dashboard-stats" class="stats-grid"></div>
+
+        <div class="action-grid">
+          <a class="action-card" href="#flashcard" data-scroll-to="flashcard">
+            <div class="action-icon">📖</div>
+            <div><h3>Học tiếp hôm nay</h3><p>Mở flashcard và học từ tiếp theo.</p></div>
+          </a>
+          <a class="action-card" href="#review" data-scroll-to="review" data-action="quick-review">
+            <div class="action-icon">⏱️</div>
+            <div><h3>Ôn tập nhanh 5 phút</h3><p>Ôn nhanh các từ đến hạn review.</p></div>
+          </a>
+          <a class="action-card" href="#confusing" data-scroll-to="confusing">
+            <div class="action-icon">🔀</div>
+            <div><h3>Luyện từ dễ nhầm</h3><p>15 nhóm từ phân biệt nhanh, có mini quiz.</p></div>
+          </a>
+          <a class="action-card" href="#quiz" data-scroll-to="quiz">
+            <div class="action-icon">🎧</div>
+            <div><h3>Luyện nghe phát âm</h3><p>Nghe và chọn chữ Hán đúng.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= VOCABULARY ========================= -->
+    <section id="vocabulary" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Từ vựng hôm nay</h2>
+          <p>Tìm kiếm, lọc và mở flashcard cho từng từ. Có nút nghe phát âm trên mỗi thẻ.</p>
+        </div>
+
+        <div class="filter-bar">
+          <input id="filter-search" type="search" placeholder="Tìm theo chữ Hán, pinyin, nghĩa tiếng Việt..." class="input input-search" />
+          <select id="filter-level" class="select">
+            <option value="">Tất cả cấp</option>
+            <option value="HSK4">HSK4</option>
+            <option value="HSK5">HSK5</option>
+          </select>
+          <select id="filter-topic" class="select"><option value="">Tất cả chủ đề</option></select>
+          <select id="filter-status" class="select"><option value="">Mọi trạng thái</option></select>
+          <select id="filter-type" class="select"><option value="">Mọi loại từ</option></select>
+          <button id="filter-reset" class="btn btn-outline">Reset</button>
+          <span id="vocab-count" class="filter-count muted">— từ</span>
+        </div>
+
+        <div id="vocab-grid" class="vocab-grid"></div>
+      </div>
+    </section>
+
+    <!-- ========================= FLASHCARD ========================= -->
+    <section id="flashcard" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Flashcard chi tiết</h2>
+          <p>Lật thẻ để xem nghĩa, ví dụ và cụm dùng. Đánh giá khả năng ghi nhớ để tự động lên lịch ôn lại.</p>
+        </div>
+        <div id="flashcard-area" class="flashcard-wrap"></div>
+      </div>
+    </section>
+
+    <!-- ========================= TOPICS ========================= -->
+    <section id="topics" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Học theo chủ đề</h2>
+          <p>11 chủ đề trải đều cuộc sống thường ngày, công việc, xã hội và công nghệ.</p>
+        </div>
+        <div id="topics-grid" class="topics-grid"></div>
+      </div>
+    </section>
+
+    <!-- ========================= GRAMMAR ========================= -->
+    <section id="grammar" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ngữ pháp HSK4–HSK5</h2>
+          <p>20 cấu trúc trọng yếu. Có công thức, ví dụ, lỗi sai hay gặp và bài tập điền nhanh.</p>
+        </div>
+        <div id="grammar-grid" class="grammar-grid"></div>
+      </div>
+    </section>
+
+    <!-- ========================= QUIZ ========================= -->
+    <section id="quiz" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Luyện tập / Quiz</h2>
+          <p>5 dạng đề HSK. Mỗi câu có phản hồi đúng/sai và giải thích nhanh.</p>
+        </div>
+
+        <div class="quiz-tabs">
+          <button data-quiz-tab="meaning_choice" class="quiz-tab is-active">Chọn nghĩa</button>
+          <button data-quiz-tab="listening_choice" class="quiz-tab">Nghe chọn chữ</button>
+          <button data-quiz-tab="fill_blank" class="quiz-tab">Điền từ</button>
+          <button data-quiz-tab="sentence_order" class="quiz-tab">Sắp xếp câu</button>
+          <button data-quiz-tab="confusing_choice" class="quiz-tab">Phân biệt</button>
+        </div>
+
+        <div id="quiz-area" class="quiz-area"></div>
+
+        <!-- Luyện đặt câu -->
+        <div class="sentence-practice">
+          <h3>✍️ Luyện đặt câu</h3>
+          <p id="sentence-target" data-word="">Đang tải từ...</p>
+          <textarea id="sentence-input" rows="3" placeholder="Viết câu tiếng Trung của bạn ở đây..." class="input"></textarea>
+          <div class="sentence-actions">
+            <button class="btn btn-primary" data-action="check-sentence">Kiểm tra</button>
+            <button class="btn btn-outline" data-action="new-sentence-target">Từ khác</button>
+          </div>
+          <div id="sentence-feedback" class="sentence-feedback"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= CONFUSING WORDS ========================= -->
+    <section id="confusing" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Từ dễ nhầm</h2>
+          <p>15 nhóm từ hay nhầm trong HSK4–HSK5. Mỗi nhóm có quy tắc nhớ nhanh và mini quiz.</p>
+        </div>
+        <div id="confusing-grid" class="confusing-grid"></div>
+      </div>
+    </section>
+
+    <!-- ========================= REVIEW ========================= -->
+    <section id="review" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ôn tập hôm nay</h2>
+          <p>Các nhóm từ được phân loại theo trạng thái học của bạn.</p>
+        </div>
+        <div id="review-area" class="review-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> HSK Memory · Dữ liệu lưu cục bộ trên trình duyệt — không gửi đi đâu.</p>
+      <p class="muted">Web Speech API phụ thuộc trình duyệt. Khuyến nghị dùng Chrome/Edge để có giọng tiếng Trung tốt nhất.</p>
+    </div>
+  </footer>
+
+  <!-- ========================= TOAST ========================= -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="script.js"></script>
+</body>
+</html>
