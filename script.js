@@ -4651,7 +4651,7 @@ function renderFlashcard(word) {
   const ex = (word.examples && word.examples[0]) || null;
 
   root.innerHTML = `
-    <div class="flashcard ${_flashcardFlipped ? 'is-flipped' : ''}" id="flashcard">
+    <div class="flashcard ${_flashcardFlipped ? 'is-flipped' : ''}" id="fc-card">
       <div class="flashcard-front">
         <div class="hanzi hanzi-xl">${word.hanzi}</div>
         <div class="pinyin pinyin-lg">${word.pinyin}</div>
@@ -4700,7 +4700,7 @@ function renderFlashcard(word) {
 
 function flipFlashcard() {
   _flashcardFlipped = !_flashcardFlipped;
-  const fc = el('flashcard');
+  const fc = el('fc-card');
   if (fc) fc.classList.toggle('is-flipped', _flashcardFlipped);
 }
 
@@ -5022,6 +5022,7 @@ function attachGlobalListeners() {
       hamburger.classList.toggle('is-active');
     });
   }
+  const allNavLinks = document.querySelectorAll('#main-nav a[data-scroll-to]');
   document.querySelectorAll('[data-scroll-to]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
@@ -5030,6 +5031,9 @@ function attachGlobalListeners() {
       if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
       if (nav) nav.classList.remove('is-open');
       if (hamburger) hamburger.classList.remove('is-active');
+      // Highlight link được click, bỏ các link khác
+      allNavLinks.forEach(l => l.classList.remove('is-current'));
+      a.classList.add('is-current');
       // also handle filter shortcut, e.g. data-scroll-to=vocabulary data-filter-level=HSK4
       if (a.dataset.filterLevel) {
         state.filters.level = a.dataset.filterLevel;
@@ -5047,7 +5051,11 @@ function attachGlobalListeners() {
       entries.forEach(e => {
         if (e.isIntersecting) {
           const id = e.target.id;
-          navLinks.forEach(l => l.classList.toggle('is-current', l.dataset.scrollTo === id));
+          // Chỉ highlight link không có data-filter-level (tránh HSK4/HSK5 cùng bật)
+          navLinks.forEach(l => {
+            const match = l.dataset.scrollTo === id && !l.dataset.filterLevel;
+            l.classList.toggle('is-current', match);
+          });
         }
       });
     }, { rootMargin:'-40% 0px -55% 0px' });
